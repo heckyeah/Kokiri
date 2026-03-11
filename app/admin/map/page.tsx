@@ -58,7 +58,7 @@ export default async function AdminAlertMapPage({
     .map((r, i) => {
       const coord = geocoded[i];
       if (!coord) return null;
-      return { ...r, lat: coord.lat, lng: coord.lng, fromAddress: true };
+      return { ...r, lat: coord.lat, lng: coord.lng, fromAddress: true } as NeedHelpMarker;
     })
     .filter((m): m is NeedHelpMarker => m != null);
 

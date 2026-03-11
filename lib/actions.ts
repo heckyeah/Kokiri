@@ -129,7 +129,7 @@ export async function setMemberResponseStatus(
       alert: { _type: "reference", _ref: alertId },
       ...payload,
       respondedAt: new Date().toISOString(),
-    });
+    } as Parameters<typeof serverClient.create>[0]);
   }
   await serverClient.create({
     _type: "statusChange",

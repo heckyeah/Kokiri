@@ -75,7 +75,7 @@ export function UserMap({ fullScreen }: UserMapProps = {}) {
 
     function onError(err: GeolocationPositionError) {
       const isDenied = err.code === err.PERMISSION_DENIED;
-      const isTimeout = err.code === err.TIMEOUT_OUT;
+      const isTimeout = err.code === 3; // TIMEOUT
       if (isDenied) {
         setLocationMessage("Location access denied. Allow it in your browser to see your position.");
       } else if (isTimeout) {

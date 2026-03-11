@@ -95,7 +95,7 @@ export default function AdminMapInner({
     }
 
     markers.forEach((m) => {
-      const marker = L.marker([m.lat, m.lng], redIcon ?? undefined).addTo(map);
+      const marker = L.marker([m.lat, m.lng], redIcon ? { icon: redIcon } : undefined).addTo(map);
       const name = m.member?.fullName ?? "Unknown";
       const phone = m.member?.phone ? `<p>${escapeHtml(m.member.phone)}</p>` : "";
       const address = m.member?.address
